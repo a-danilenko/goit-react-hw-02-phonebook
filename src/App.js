@@ -14,7 +14,7 @@ export default class App extends Component {
     ],
     filter: '',
     name: '',
-    number: ''
+    number:''
   };
 
   addContact = (e) => {
@@ -22,7 +22,7 @@ export default class App extends Component {
       .map((contact) => contact.name)
       .includes(e.name);
 
-      if (searchSameName) {
+    if (searchSameName) {
       alert(`${e.name} is already in contacts`);
     } else if (e.name.length === 0) {
       alert('the field must not be empty!');
@@ -67,15 +67,11 @@ export default class App extends Component {
         <h1>Phonebook</h1>
         <ContactForm onAddContact={this.addContact} />
         <h2>Contacts</h2>
-        {visibleContacts.length > 1 && (
           <Filter value={filter} onChangeFilter={this.changeFilter} />
-        )}
-        {visibleContacts.length > 0 && (
           <ContactsList
             contacts={visibleContacts}
             onRemoveContact={this.removeContact}
           />
-        )}
       </div>
     );
   }

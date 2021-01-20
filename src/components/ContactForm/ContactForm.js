@@ -9,6 +9,7 @@ export default class ContactForm extends Component {
 
   handleChange = e => {
     const { name, value } = e.target;
+
     this.setState({
       [name]: value,
     });
@@ -33,6 +34,7 @@ export default class ContactForm extends Component {
             name='name'
             value={this.state.name}
             onChange={this.handleChange}
+            placeholder="Name"
           />
         </label>
         <label className={s.contactFormLabel}>
@@ -43,6 +45,8 @@ export default class ContactForm extends Component {
             name='number'
             value={this.state.number}
             onChange={this.handleChange}
+            placeholder='xxx-xxx-xxx'
+            pattern="^[0-9- ]*$"
           />
         </label>
         <button className={s.contactFormButton} type='submit'>

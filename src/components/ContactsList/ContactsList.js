@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import s from './ContactList.module.css';
 
 const ContactList = ({ contacts, onRemoveContact }) => (
-  <ul className={s.contactList}>
+  <ul>
     {contacts.map((contact) => (
       <li className = {s.contactItem} key={contact.id}>
         {`${contact.name} : ${contact.number}`}
